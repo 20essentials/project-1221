@@ -23,7 +23,8 @@ const { style } = Astro.props;
 </style>
 
 <script>
-  import { $ } from '@/utils/functions';
+  const $ = <T extends Element = HTMLElement>(el: string) =>
+    document.querySelector<T>(el) as T;
 
   const PARAMS = {
     globalCompositeOperation: 'screen' as GlobalCompositeOperation
